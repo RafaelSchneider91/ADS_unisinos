@@ -13,7 +13,7 @@
  */
 
 
-package Etapa2;
+package Etapa1;
 
 public class Data {
     private int dia, mes, ano;

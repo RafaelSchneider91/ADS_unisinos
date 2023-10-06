@@ -14,12 +14,12 @@ public class Produto {
     private String nome;
     private double preco;
     private Data dataValidade; //data de validade do produto
-    private Data estaVencido; //dataatual
+    // private Data estaVencido; //dataatual
 
-    public Produto(String nome, double preco){
+    public Produto(String nome, double preco, Data dataValidade){
         this.nome = nome;
         this.preco = preco;
-        // this.dataValidade = dataValidade;
+        this.dataValidade = dataValidade;
         // this.estaVencido = estaVencido;
     }
 
@@ -32,10 +32,6 @@ public class Produto {
 
     public Data getDataValidade() {
         return dataValidade;
-    }
-
-    public Data getEstaVencido() {
-        return estaVencido;
     }
     
     public void setNome(String nome) {
@@ -50,20 +46,24 @@ public class Produto {
         this.dataValidade = dataValidade;
     }
 
-    public void setEstaVencido(Data estaVencido) {
-        this.estaVencido = estaVencido;
-    }
 
     @Override
     public String toString(){
         return "Produto{"+
                 "nome='"+nome+'\''+
                 ", preço =" + preco +
+                ", dataValidade =" + dataValidade +
+
                 '}';    
     }
 
-    public boolean estaVencido(Data dataValidade, Data estaVencido){
-        if (dataValidade.getAno() <= estaVencido.getAno()){
+
+
+    public boolean estaVencido(Data data){
+        if (dataValidade.getAno() < data.getAno() 
+        || (dataValidade.getAno() == data.getAno() && dataValidade.getMes() < data.getMes()) 
+        || (dataValidade.getAno() == data.getAno() && dataValidade.getMes() == data.getMes() && dataValidade.getDia() < data.getDia())
+        ){
             return true;
         }else{
             return false;

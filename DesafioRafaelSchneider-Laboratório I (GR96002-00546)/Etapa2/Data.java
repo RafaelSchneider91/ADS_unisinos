@@ -45,24 +45,17 @@ public class Data {
         this.ano = ano;
     }
 
-    // public boolean verificaAnoBissexto(){
-    //     if (mes == 2) {
-    //         if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
-    //             return true; // Fevereiro em ano bissexto
-    //         } else {
-    //             return false; // Fevereiro em ano não bissexto
-    //         }
-    //     } else {
-    //         return false; // Outros meses
-    //     }
-    // }
-
     public boolean verificaAnoBissexto() {
         if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
             return true; // O ano é bissexto
         } else {
             return false; // O ano não é bissexto
         }
+    }
+
+    @Override
+    public String toString(){
+        return dia + "/"+ mes + "/" + ano;    
     }
 
 }

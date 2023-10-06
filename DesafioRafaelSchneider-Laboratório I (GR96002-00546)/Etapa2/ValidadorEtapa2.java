@@ -1,9 +1,9 @@
 package Etapa2;
 
-import Etapa1.Endereco;
-import Etapa1.Loja;
-import Etapa1.Produto;
-
+import Etapa2.Endereco;
+import Etapa2.Loja;
+import Etapa2.Produto;
+import Etapa2.Data;
 
 public class ValidadorEtapa2 {
 
